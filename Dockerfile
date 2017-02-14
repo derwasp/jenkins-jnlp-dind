@@ -16,5 +16,8 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.
     unzip ./awscli-bundle.zip && \
     ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
+# Zip
+RUN apt-get install -y zip
+
 COPY start-slave /usr/local/bin/start-slave
-ENTRYPOINT [ "start-jenkins" ]
+ENTRYPOINT [ "start-slave" ]
